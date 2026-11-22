@@ -1,0 +1,56 @@
+settings:
+  alerts: true
+  join-scan-delay-ticks: 60
+  auto-scan-on-join: false
+
+  # Opens a temporary virtual sign editor. Keep manual-only enabled unless
+  # players have been informed and the behavior has been tested on your server.
+  sign-translation:
+    enabled: false
+    manual-only: true
+    response-timeout-ticks: 40
+    probes:
+      meteor:
+        display-name: "Meteor Client translation signal"
+        translation-key: "meteor.clickgui"
+        fallback: "COPE_MTR_7F31"
+      wurst:
+        display-name: "Wurst Client translation signal"
+        translation-key: "wurst.keybinds"
+        fallback: "COPE_WRST_8A42"
+
+  # A client brand is self-reported and can be changed or hidden. This is not
+  # a complete mod inventory and must never be treated as proof by itself.
+  client-brand-check:
+    enabled: true
+    blocked-brands: []
+
+  mod-check:
+    # Exact plugin-channel matches only. Channels are client-reported signals.
+    blocked-plugin-channels: []
+    # Configuration placeholders only: Paper cannot enumerate every installed mod.
+    allowed-mods:
+      - "fabric-api"
+      - "sodium"
+      - "lithium"
+    blocked-mods: []
+
+  detection:
+    alerts-only: true
+    violation-decay-per-second: 0.15
+    violation-cooldown-ms: 3000
+    movement:
+      enabled: true
+      # Sampled once per server tick, not per PlayerMoveEvent packet.
+      max-horizontal-distance-per-tick: 1.25
+      required-consecutive-ticks: 3
+      violation-weight: 1.0
+    combat:
+      enabled: true
+      max-reach: 3.5
+      extra-buffer: 0.35
+      required-outliers-in-window: 3
+      violation-weight: 1.0
+
+messages:
+  prefix: "&8[&bC.O.P.E.&8] &r"
