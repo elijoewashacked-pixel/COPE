@@ -1,0 +1,16 @@
+name: COPE
+version: '${version}'
+main: com.cope.CopePlugin
+api-version: '1.21.11'
+author: COPE Team
+description: Conservative server-side anomaly alerts and client signal checks.
+commands:
+  cope:
+    description: Main C.O.P.E. administration command
+    usage: /cope help
+    permission: cope.admin
+permissions:
+  cope.admin:
+    default: op
+  cope.alerts:
+    default: op
